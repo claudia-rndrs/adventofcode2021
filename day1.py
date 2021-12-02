@@ -5,12 +5,18 @@ def sonarSweep():
 
     count = int(0)
     previous = int(0)
+    length = len(data)
 
-    for number in data:
-        if(previous and int(number) > previous):
+    for i in range(0,length -2):
+        a = int(data[i])
+        b = int(data[i+1])
+        c = int(data[i+2])
+        sum = a + b + c
+
+        if(previous and sum > previous): 
             count +=1
         
-        previous = int(number)
+        previous = sum
     
     return count
 
